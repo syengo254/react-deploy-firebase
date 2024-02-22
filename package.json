@@ -1,0 +1,18 @@
+{
+    "name": "react-django-fireb-gitacts",
+    "version": "1.1.2",
+    "private": true,
+    "license": "MIT",
+    "workspaces": [
+        "frontend"
+    ],
+    "scripts": {
+        "start": "npm --workspace=@ui/react-fire-app start",
+        "build": "npm --workspace=@ui/react-fire-app build",
+        "test": "npm --workspace=@ui/react-fire-app test",
+        "eject": "npm --workspace=@ui/react-fire-app eject"
+    },
+    "author": "David Syengo",
+    "dependencies": {},
+    "devDependencies": {}
+}
