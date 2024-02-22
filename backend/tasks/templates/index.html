@@ -23,13 +23,77 @@
         .task-item {
             margin-block: .4rem;
         }
+
+        form {
+            margin: .5rem;
+            width: fit-content;
+        }
+
+        .fg {
+            margin-block: .5rem;
+        }
+
+        input {
+            border: 1px solid #818181;
+            font-family: inherit;
+            font-size: .9rem;
+            min-width: 220px;
+            padding: .2rem .4rem;
+            border-radius: 3.5px;
+        }
+
+        .errors {
+            font-size: .9rem;
+            font-style: italic;
+            color: orangered;
+            margin-bottom: .5rem;
+        }
+
+        button[type="submit"] {
+            padding: .3rem .6rem;
+            font-family: inherit;
+            font-weight: bold;
+            float: right;
+            background-color: #d7d7d7;
+            outline: none;
+            border: 1px solid #818181;
+            border-radius: 3.5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:active,
+        button[type="submit"]:focus {
+            background-color: #ececec;
+        }
     </style>
 </head>
 
 <body>
     <h1>You are here! Hurrayy!</h1>
 
-    <p><b>My Tasks:</b></p>
+    <form action="{% url 'add_task' %}" method="post">
+        {% csrf_token %}
+        {% if messages %}
+        <div class="errors">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="fg">
+            <label>Add task:</label>
+            <input type="text" name="title" placeholder="enter task title" required />
+        </div>
+        <div class="fg">
+            <label>Add task:</label>
+            <input type="datetime-local" name="due_date" placeholder="pick due date" required />
+        </div>
+        <button type="submit">Add</button>
+        <div style="clear: both;"></div>
+    </form>
+    <hr />
+
+    <b>My Tasks:</b>
 
     <main>
 
