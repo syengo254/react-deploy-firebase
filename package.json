@@ -8,7 +8,7 @@
     ],
     "scripts": {
         "start": "npm --workspace=@ui/react-fire-app start",
-        "build": "npm --workspace=@ui/react-fire-app build",
+        "build": "npm run --workspace=@ui/react-fire-app build",
         "test": "npm --workspace=@ui/react-fire-app test",
         "eject": "npm --workspace=@ui/react-fire-app eject"
     },
