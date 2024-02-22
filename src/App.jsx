@@ -10,6 +10,7 @@ function App() {
       This is react app that will be deployed to Google's Firebase hosting via Github Actions.
       <p>Enjoy!!</p>
       <Counter startCount={-1} />
+      <p>{process.env.REACT_APP_TEST_VAR}</p>
     </div>
   );
 }
