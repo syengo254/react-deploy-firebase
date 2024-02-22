@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Django App</title>
+    <style>
+        body {
+            background: #e9e9e9;
+        }
+
+        h1 {
+            margin: 1rem;
+            font-size: 2rem;
+        }
+
+        i {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .task-item {
+            margin-block: .4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>You are here! Hurrayy!</h1>
+
+    <p><b>My Tasks:</b></p>
+
+    <main>
+
+        {% for task in tasks.all %}
+        <div class="task-item">
+            <div>
+                {{ forloop.counter }}. {{ task.title }}
+                <span>
+                    <input type="checkbox" id="{{task.id}}-done" {% if task.done %} checked {% endif %} />
+                </span>
+            </div>
+            <i>{{task.due_date}}</i>
+        </div>
+        {% endfor %}
+
+    </main>
+
+</body>
+
+</html>
