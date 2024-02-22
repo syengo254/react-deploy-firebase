@@ -1,0 +1,21 @@
+.counter {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+button {
+    font-weight: 600;
+    padding: .3rem .6rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.counter>span {
+    font-size: 1.5rem;
+    margin-inline: .5rem;
+}

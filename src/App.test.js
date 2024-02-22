@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders home page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const text = screen.getByText(/will be deployed to Google's Firebase/i);
+  expect(text).toBeInTheDocument();
 });
